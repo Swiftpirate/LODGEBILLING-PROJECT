@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Lodge Billing Lab  —  "Aurora Borealis" theme
+   Layered on top of styles.css: only colours change, the layout stays the same.
+   Arctic night, frosted teal glass, mint / cyan / violet accents.
+   (The -gold names are kept so both themes share one set of rules.)
+   ========================================================================== */
+
+.app-background {
+    -fx-background-color:
+        radial-gradient(center 50% 100%, radius 75%, rgba(34, 211, 238, 0.10) 0%, transparent 70%),
+        radial-gradient(center 30% 0%, radius 80%, #0b2a36 0%, transparent 65%),
+        linear-gradient(to bottom, #02070d 0%, #061922 55%, #0a1a2a 100%);
+}
+
+.root {
+    -gold: #5eead4;
+    -gold-light: #99f6e4;
+    -gold-deep: #14b8a6;
+    -field: rgba(3, 12, 20, 0.82);
+    -fx-base: #13262f;
+    -fx-background: #06121a;
+    -fx-control-inner-background: #0b1d27;
+    -fx-accent: #5eead4;
+    -fx-focus-color: #5eead4;
+    -fx-background-color: #03090f;
+}
+
+.app-title {
+    -fx-text-fill: linear-gradient(to right, #6ee7b7 0%, #67e8f9 50%, #c4b5fd 100%);
+}
+
+.clock {
+    -fx-border-color: rgba(94, 234, 212, 0.35);
+}
+
+.menu-bar {
+    -fx-background-color: rgba(2, 8, 14, 0.65);
+    -fx-border-color: transparent transparent rgba(94, 234, 212, 0.25) transparent;
+}
+
+.menu-bar .menu:hover,
+.menu-bar .menu:showing {
+    -fx-background-color: rgba(94, 234, 212, 0.18);
+}
+
+.context-menu {
+    -fx-background-color: #0a1c26;
+    -fx-border-color: rgba(94, 234, 212, 0.3);
+}
+
+.menu-item:focused {
+    -fx-background-color: rgba(94, 234, 212, 0.22);
+}
+
+.nav-bar {
+    -fx-border-color: rgba(94, 234, 212, 0.25);
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(94, 234, 212, 0.18);
+}
+
+.nav-pill {
+    -fx-effect: dropshadow(gaussian, rgba(94, 234, 212, 0.55), 14, 0.2, 0, 0);
+}
+
+.nav-button:selected,
+.nav-button:selected:hover {
+    -fx-text-fill: #042f2e;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: rgba(94, 234, 212, 0.18);
+}
+
+.tab-pane .tab:selected {
+    -fx-effect: dropshadow(gaussian, rgba(94, 234, 212, 0.45), 14, 0.2, 0, 0);
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #042f2e;
+}
+
+.card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(16, 40, 52, 0.72), rgba(5, 16, 24, 0.80));
+    -fx-border-color: rgba(94, 234, 212, 0.26);
+}
+
+.card:hover {
+    -fx-border-color: rgba(94, 234, 212, 0.5);
+}
+
+.summary-card {
+    -fx-background-color: linear-gradient(to bottom, rgba(18, 64, 70, 0.55), rgba(5, 16, 24, 0.85));
+}
+
+.text-field,
+.text-area,
+.combo-box-base,
+.spinner {
+    -fx-highlight-text-fill: #042f2e;
+}
+
+.text-field:focused,
+.text-area:focused,
+.combo-box-base:focused,
+.combo-box-base:showing,
+.spinner:focused {
+    -fx-background-color: -gold, rgba(4, 14, 22, 0.95);
+    -fx-effect: dropshadow(gaussian, rgba(94, 234, 212, 0.35), 12, 0.15, 0, 0);
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: rgba(94, 234, 212, 0.3);
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #0a1c26;
+    -fx-border-color: rgba(94, 234, 212, 0.3);
+}
+
+.combo-box-popup .list-cell:hover,
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: rgba(94, 234, 212, 0.25);
+}
+
+.date-picker-popup {
+    -fx-background-color: #0a1c26;
+    -fx-border-color: rgba(94, 234, 212, 0.35);
+}
+
+.date-picker-popup .date-cell:hover {
+    -fx-background-color: rgba(94, 234, 212, 0.25);
+}
+
+.date-picker-popup .selected {
+    -fx-text-fill: #042f2e;
+}
+
+.tooltip {
+    -fx-background-color: #103039;
+}
+
+.button:hover {
+    -fx-background-color: rgba(94, 234, 212, 0.16);
+    -fx-border-color: rgba(94, 234, 212, 0.65);
+    -fx-effect: dropshadow(gaussian, rgba(94, 234, 212, 0.45), 14, 0.2, 0, 0);
+}
+
+.button:focused {
+    -fx-border-color: rgba(94, 234, 212, 0.8);
+}
+
+.button.primary {
+    -fx-background-color: linear-gradient(to bottom, #a7f3d0, #22d3ee);
+    -fx-text-fill: #042f2e;
+    -fx-effect: dropshadow(gaussian, rgba(94, 234, 212, 0.35), 10, 0.2, 0, 2);
+}
+
+.button.primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #ccfbf1, #67e8f9);
+    -fx-effect: dropshadow(gaussian, rgba(153, 246, 228, 0.75), 20, 0.3, 0, 0);
+}
+
+.summary-total {
+    -fx-effect: dropshadow(gaussian, rgba(94, 234, 212, 0.5), 12, 0.1, 0, 0);
+}
+
+.stat-tile {
+    -fx-background-color: linear-gradient(to bottom right, rgba(16, 40, 52, 0.7), rgba(5, 16, 24, 0.8));
+}
+
+.stat-plain {
+    -accent-color: #a78bfa;
+}
+
+.stat-gold {
+    -accent-color: #5eead4;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: rgba(94, 234, 212, 0.09);
+}
+
+.table-row-cell:selected {
+    -fx-background-color: linear-gradient(to right, rgba(94, 234, 212, 0.34), rgba(94, 234, 212, 0.08));
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: rgba(94, 234, 212, 0.08);
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(94, 234, 212, 0.18);
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(94, 234, 212, 0.55);
+}
+
+.default-color0.chart-bar {
+    -fx-bar-fill: #5eead4;
+    -fx-background-color: linear-gradient(to top, #0d9488, #99f6e4);
+}
+
+.default-color0.chart-legend-item-symbol {
+    -fx-background-color: #5eead4;
+}
+
+.toast {
+    -fx-background-color: rgba(6, 22, 30, 0.96);
+}
+
+.toast-info {
+    -fx-border-color: #5eead4;
+}
+
+.toast-info .toast-timer {
+    -fx-background-color: #5eead4;
+}
+
+.dialog-pane {
+    -fx-background-color: linear-gradient(to bottom, #0c2530, #06131b);
+}
+
+.dialog-pane > .header-panel {
+    -fx-background-color: rgba(94, 234, 212, 0.12);
+    -fx-border-color: transparent transparent rgba(94, 234, 212, 0.35) transparent;
+}
+
+.login-card {
+    -fx-background-color: linear-gradient(to bottom, rgba(16, 46, 58, 0.82), rgba(4, 14, 22, 0.90));
+    -fx-border-color: rgba(94, 234, 212, 0.45);
+}
+
+.login-title {
+    -fx-text-fill: linear-gradient(to right, #6ee7b7 0%, #67e8f9 50%, #c4b5fd 100%);
+}
+
+.user-chip {
+    -fx-border-color: rgba(94, 234, 212, 0.35);
+}
+
+.role-manager {
+    -fx-text-fill: #042f2e;
+}
+
+.recovery-key {
+    -fx-background-color: rgba(94, 234, 212, 0.10);
+}

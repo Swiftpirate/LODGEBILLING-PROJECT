@@ -1,0 +1,1076 @@
+/* ==========================================================================
+   Lodge Billing Lab  —  "Midnight luxury" theme
+   Navy night sky, frosted glass cards, gold and emerald accents.
+   ========================================================================== */
+
+.root {
+    -gold: #d4af37;
+    -gold-light: #f1d67a;
+    -gold-deep: #b8901f;
+    -emerald: #2ecc9a;
+    -rose: #ff8a9b;
+    -sky: #6cc4ff;
+    -ink: #f2f0fa;
+    -muted: #9aa3bd;
+    -glass-edge: rgba(255, 255, 255, 0.14);
+    -field: rgba(10, 14, 30, 0.82);
+
+    -fx-base: #1b2136;
+    -fx-background: #0a0f22;
+    -fx-control-inner-background: #121830;
+    -fx-accent: #d4af37;
+    -fx-focus-color: #d4af37;
+    -fx-faint-focus-color: transparent;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #070b18;
+}
+
+/* ----- Background & shell ----- */
+
+.app-background {
+    -fx-background-color:
+        radial-gradient(center 50% 0%, radius 90%, #18204a 0%, transparent 70%),
+        linear-gradient(to bottom right, #060914 0%, #0c1230 45%, #120a26 100%);
+}
+
+.label {
+    -fx-text-fill: -ink;
+}
+
+.app-title {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #fbe9b0 0%, #d4af37 50%, #fbe9b0 100%);
+}
+
+.app-subtitle {
+    -fx-text-fill: -muted;
+    -fx-font-size: 12.5px;
+}
+
+.clock {
+    -fx-text-fill: #cfd5ea;
+    -fx-font-size: 13px;
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(212, 175, 55, 0.35);
+    -fx-border-radius: 20;
+    -fx-padding: 7 16;
+}
+
+/* ----- Menu bar ----- */
+
+.menu-bar {
+    -fx-background-color: rgba(5, 8, 20, 0.65);
+    -fx-border-color: transparent transparent rgba(212, 175, 55, 0.25) transparent;
+    -fx-padding: 2 10;
+}
+
+.menu-bar .menu > .label {
+    -fx-text-fill: #cfd5ea;
+}
+
+.menu-bar .menu:hover,
+.menu-bar .menu:showing {
+    -fx-background-color: rgba(212, 175, 55, 0.18);
+    -fx-background-radius: 6;
+}
+
+.context-menu {
+    -fx-background-color: #141a33;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(212, 175, 55, 0.3);
+    -fx-border-radius: 10;
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 18, 0.2, 0, 6);
+}
+
+.menu-item {
+    -fx-background-radius: 6;
+    -fx-padding: 6 14;
+}
+
+.menu-item .label {
+    -fx-text-fill: #e4e7f5;
+}
+
+.menu-item .accelerator-text {
+    -fx-text-fill: -muted;
+}
+
+.menu-item:focused {
+    -fx-background-color: rgba(212, 175, 55, 0.22);
+}
+
+.separator .line {
+    -fx-border-color: rgba(255, 255, 255, 0.1) transparent transparent transparent;
+}
+
+/* ----- Page switcher (Billing / Reports pills in the header) ----- */
+
+.nav-bar {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(212, 175, 55, 0.25);
+    -fx-border-radius: 24;
+    -fx-padding: 4;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 20;
+    -fx-text-fill: #cfd5ea;
+    -fx-font-size: 14px;
+    -fx-padding: 6 24;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.18);
+}
+
+/* The gold highlight is a separate pill that glides between the buttons (see MainView.buildNavBar) */
+.nav-pill {
+    -fx-background-color: linear-gradient(to bottom, -gold-light, -gold-deep);
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(212, 175, 55, 0.55), 14, 0.2, 0, 0);
+}
+
+.nav-button:selected,
+.nav-button:selected:hover {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1a1405;
+}
+
+.nav-button:focused {
+    -fx-background-insets: 0;
+}
+
+/* ----- Tabs ----- */
+
+.tab-pane > .tab-header-area {
+    -fx-padding: 4 0 0 0;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 18;
+    -fx-background-insets: 0 6 0 0;
+    -fx-padding: 6 22;
+    -fx-cursor: hand;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.18);
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: linear-gradient(to bottom, -gold-light, -gold-deep);
+    -fx-effect: dropshadow(gaussian, rgba(212, 175, 55, 0.45), 14, 0.2, 0, 0);
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #cfd5ea;
+    -fx-font-size: 14px;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #1a1405;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab:selected .focus-indicator,
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+/* ----- Page scroller (only scrolls on small screens) ----- */
+
+.page-scroller,
+.page-scroller > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+/* ----- Glass cards ----- */
+
+.card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(32, 40, 72, 0.72), rgba(14, 18, 38, 0.80));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(212, 175, 55, 0.26);
+    -fx-border-radius: 18;
+    -fx-padding: 14 18;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 26, 0.12, 0, 8);
+}
+
+.card:hover {
+    -fx-border-color: rgba(212, 175, 55, 0.5);
+}
+
+.summary-card {
+    -fx-background-color: linear-gradient(to bottom, rgba(48, 40, 18, 0.55), rgba(14, 18, 38, 0.85));
+}
+
+.card-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ink;
+}
+
+.card-caption {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -gold;
+}
+
+.form-label {
+    -fx-text-fill: #aab3cc;
+}
+
+.form-error {
+    -fx-text-fill: -rose;
+    -fx-font-weight: bold;
+}
+
+.hint {
+    -fx-text-fill: -muted;
+    -fx-font-size: 12px;
+}
+
+.checkout-value {
+    -fx-text-fill: -gold-light;
+    -fx-font-weight: bold;
+}
+
+/* ----- Inputs ----- */
+
+.text-field,
+.text-area,
+.combo-box-base,
+.spinner {
+    -fx-background-color: -glass-edge, -field;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 10, 9;
+    -fx-text-fill: -ink;
+    -fx-prompt-text-fill: #67708c;
+    -fx-highlight-fill: -gold;
+    -fx-highlight-text-fill: #1a1405;
+}
+
+.text-field {
+    -fx-padding: 6 11;
+}
+
+.text-field:focused,
+.text-area:focused,
+.combo-box-base:focused,
+.combo-box-base:showing,
+.spinner:focused {
+    -fx-background-color: -gold, rgba(12, 16, 34, 0.95);
+    -fx-effect: dropshadow(gaussian, rgba(212, 175, 55, 0.35), 12, 0.15, 0, 0);
+}
+
+.text-field.invalid,
+.text-field.invalid:focused {
+    -fx-background-color: -rose, rgba(40, 12, 22, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(255, 107, 129, 0.45), 12, 0.2, 0, 0);
+}
+
+/* Inner editors of composite controls stay transparent */
+.spinner > .text-field,
+.spinner > .text-field:focused,
+.date-picker > .text-field,
+.date-picker > .text-field:focused {
+    -fx-background-color: transparent;
+    -fx-effect: null;
+}
+
+.text-area {
+    -fx-padding: 2;
+}
+
+.text-area .content,
+.text-area .scroll-pane,
+.text-area .viewport {
+    -fx-background-color: transparent;
+}
+
+.combo-box-base > .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box-base > .arrow-button > .arrow {
+    -fx-background-color: -gold;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: -ink;
+    -fx-background-color: transparent;
+    -fx-padding: 6 10;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 0 8 0 0;
+}
+
+.spinner .decrement-arrow-button {
+    -fx-background-radius: 0 0 8 0;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.3);
+}
+
+.spinner .increment-arrow,
+.spinner .decrement-arrow {
+    -fx-background-color: -gold;
+}
+
+.search-field {
+    -fx-background-radius: 20, 19;
+    -fx-padding: 7 16;
+}
+
+/* ----- Popups: combo list, date picker, tooltips ----- */
+
+.combo-box-popup .list-view {
+    -fx-background-color: #141a33;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(212, 175, 55, 0.3);
+    -fx-border-radius: 10;
+    -fx-padding: 4;
+}
+
+.combo-box-popup .list-cell {
+    -fx-text-fill: #e4e7f5;
+    -fx-background-color: transparent;
+    -fx-background-radius: 6;
+    -fx-padding: 7 12;
+}
+
+.combo-box-popup .list-cell:hover,
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: rgba(212, 175, 55, 0.25);
+}
+
+.date-picker-popup {
+    -fx-background-color: #141a33;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(212, 175, 55, 0.35);
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 18, 0.2, 0, 6);
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup .spinner {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup .spinner .label {
+    -fx-text-fill: -gold-light;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup .left-button,
+.date-picker-popup .right-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup .left-arrow,
+.date-picker-popup .right-arrow {
+    -fx-background-color: -gold;
+}
+
+.date-picker-popup > .calendar-grid {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup .day-name-cell {
+    -fx-text-fill: -muted;
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup .date-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e4e7f5;
+    -fx-background-radius: 6;
+}
+
+.date-picker-popup .date-cell:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.25);
+}
+
+.date-picker-popup .previous-month,
+.date-picker-popup .next-month {
+    -fx-text-fill: #59617a;
+}
+
+.date-picker-popup .today {
+    -fx-border-color: -gold;
+    -fx-border-radius: 6;
+}
+
+.date-picker-popup .selected {
+    -fx-background-color: -gold;
+    -fx-text-fill: #1a1405;
+}
+
+.tooltip {
+    -fx-background-color: #1d2445;
+    -fx-background-radius: 8;
+    -fx-text-fill: #f2f0fa;
+    -fx-font-size: 12px;
+    -fx-padding: 6 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.2, 0, 3);
+}
+
+/* ----- Buttons ----- */
+
+.button {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-radius: 10;
+    -fx-text-fill: #e4e7f5;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.16);
+    -fx-border-color: rgba(212, 175, 55, 0.65);
+    -fx-effect: dropshadow(gaussian, rgba(212, 175, 55, 0.45), 14, 0.2, 0, 0);
+}
+
+.button:focused {
+    -fx-border-color: rgba(212, 175, 55, 0.8);
+}
+
+.button:disabled {
+    -fx-opacity: 0.35;
+}
+
+.button.primary {
+    -fx-background-color: linear-gradient(to bottom, #f6dd8a, #c9a227);
+    -fx-border-color: transparent;
+    -fx-text-fill: #1a1405;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(212, 175, 55, 0.35), 10, 0.2, 0, 2);
+}
+
+.button.primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #fff0b8, #ddb43a);
+    -fx-effect: dropshadow(gaussian, rgba(241, 214, 122, 0.75), 20, 0.3, 0, 0);
+}
+
+.button.danger:hover {
+    -fx-background-color: rgba(255, 107, 129, 0.18);
+    -fx-border-color: -rose;
+    -fx-effect: dropshadow(gaussian, rgba(255, 107, 129, 0.5), 14, 0.2, 0, 0);
+}
+
+/* ----- Live bill ----- */
+
+.summary-label {
+    -fx-text-fill: #aab3cc;
+}
+
+.summary-value {
+    -fx-text-fill: -ink;
+    -fx-font-size: 14px;
+}
+
+.summary-total-caption {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ink;
+}
+
+.summary-total {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -gold-light;
+    -fx-effect: dropshadow(gaussian, rgba(212, 175, 55, 0.5), 12, 0.1, 0, 0);
+}
+
+.summary-balance {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.balance-owing   { -fx-text-fill: -rose; }
+.balance-settled { -fx-text-fill: -emerald; }
+.balance-change  { -fx-text-fill: -sky; }
+
+.rate-name {
+    -fx-text-fill: #cfd5ea;
+}
+
+.rate-price {
+    -fx-text-fill: -gold-light;
+}
+
+/* ----- Stat tiles ----- */
+
+.stat-tile {
+    -fx-background-color: linear-gradient(to bottom right, rgba(32, 40, 72, 0.7), rgba(14, 18, 38, 0.8));
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.1) -accent-color;
+    -fx-border-width: 1 1 1 4;
+    -fx-border-radius: 14;
+    -fx-padding: 7 18;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.45), 18, 0.1, 0, 5);
+    -accent-color: #9aa3bd;
+}
+
+.stat-tile:hover {
+    -fx-effect: dropshadow(gaussian, derive(-accent-color, -20%), 22, 0.15, 0, 0);
+}
+
+.stat-plain   { -accent-color: #8fa0d8; }
+.stat-gold    { -accent-color: #d4af37; }
+.stat-emerald { -accent-color: #2ecc9a; }
+.stat-rose    { -accent-color: #ff6b81; }
+
+.stat-caption {
+    -fx-text-fill: -muted;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.stat-value {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -accent-color;
+}
+
+/* ----- Table ----- */
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view:focused {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-size: 36;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -gold;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header .arrow {
+    -fx-background-color: -gold;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-cell-size: 38;
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.05) transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.025);
+}
+
+.table-row-cell:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.09);
+}
+
+.table-row-cell:fresh {
+    -fx-background-color: rgba(46, 204, 154, 0.22);
+}
+
+.table-row-cell:selected {
+    -fx-background-color: linear-gradient(to right, rgba(212, 175, 55, 0.34), rgba(212, 175, 55, 0.08));
+}
+
+.table-cell {
+    -fx-text-fill: #e4e7f5;
+    -fx-padding: 0 12;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Modena draws white cell dividers on the focused, selected row; hide them */
+.table-row-cell .table-cell,
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected .table-cell {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.table-cell.numeric {
+    -fx-alignment: CENTER-RIGHT;
+}
+
+.table-view .column-header.numeric .label {
+    -fx-alignment: CENTER-RIGHT;
+}
+
+.table-cell.owing {
+    -fx-text-fill: -rose;
+    -fx-font-weight: bold;
+}
+
+.table-cell.settled {
+    -fx-text-fill: -emerald;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: white;
+}
+
+.table-row-cell:selected .table-cell.owing {
+    -fx-text-fill: #ffc2cb;
+}
+
+.table-row-cell:selected .table-cell.settled {
+    -fx-text-fill: #9ff5d5;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: -muted;
+    -fx-font-size: 14px;
+}
+
+/* ----- Lists (reports) ----- */
+
+.list-view {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -ink;
+    -fx-padding: 8 10;
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.05) transparent;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.08);
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(212, 175, 55, 0.18);
+}
+
+.list-view .placeholder .label {
+    -fx-text-fill: -emerald;
+    -fx-font-size: 14px;
+}
+
+.owing-name {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.owing-detail {
+    -fx-text-fill: -muted;
+    -fx-font-size: 12px;
+}
+
+.owing-amount {
+    -fx-text-fill: -rose;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* ----- Scroll bars ----- */
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+    -fx-background-radius: 8;
+    -fx-background-insets: 2;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.55);
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+/* ----- Charts ----- */
+
+.chart {
+    -fx-padding: 6;
+}
+
+.chart-title {
+    -fx-text-fill: -ink;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.chart-plot-background,
+.chart-alternative-row-fill,
+.chart-alternative-column-fill {
+    -fx-background-color: transparent;
+    -fx-fill: transparent;
+}
+
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: rgba(255, 255, 255, 0.06);
+}
+
+.chart-vertical-zero-line,
+.chart-horizontal-zero-line {
+    -fx-stroke: rgba(255, 255, 255, 0.15);
+}
+
+.axis {
+    -fx-tick-label-fill: #aab3cc;
+}
+
+.axis-tick-mark,
+.axis-minor-tick-mark {
+    -fx-stroke: rgba(255, 255, 255, 0.15);
+}
+
+.axis-label {
+    -fx-text-fill: #aab3cc;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #cfd5ea;
+}
+
+.default-color0.chart-bar {
+    -fx-bar-fill: #d4af37;
+    -fx-background-color: linear-gradient(to top, #a8841a, #f1d67a);
+    -fx-background-radius: 6 6 0 0;
+}
+
+.default-color1.chart-bar {
+    -fx-bar-fill: #ff8a9b;
+    -fx-background-color: linear-gradient(to top, #c2455a, #ff9aa9);
+    -fx-background-radius: 6 6 0 0;
+}
+
+.default-color0.chart-legend-item-symbol {
+    -fx-background-color: #d4af37;
+}
+
+.default-color1.chart-legend-item-symbol {
+    -fx-background-color: #ff8a9b;
+}
+
+/* ----- Toasts ----- */
+
+.toast {
+    -fx-background-color: rgba(18, 23, 46, 0.96);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-width: 1 1 1 4;
+    -fx-padding: 12 22;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.65), 22, 0.2, 0, 6);
+}
+
+.toast-text {
+    -fx-text-fill: #f2f0fa;
+    -fx-font-size: 14px;
+}
+
+.toast-timer {
+    -fx-background-radius: 2;
+    -fx-opacity: 0.75;
+}
+
+.toast-success { -fx-border-color: #2ecc9a; }
+.toast-info    { -fx-border-color: #d4af37; }
+.toast-error   { -fx-border-color: #ff6b81; }
+
+.toast-success .toast-timer { -fx-background-color: #2ecc9a; }
+.toast-info .toast-timer    { -fx-background-color: #d4af37; }
+.toast-error .toast-timer   { -fx-background-color: #ff6b81; }
+
+/* ----- Dialogs ----- */
+
+.dialog-pane {
+    -fx-background-color: linear-gradient(to bottom, #161c38, #0e1328);
+    -fx-padding: 4;
+}
+
+.dialog-pane > .header-panel {
+    -fx-background-color: rgba(212, 175, 55, 0.12);
+    -fx-border-color: transparent transparent rgba(212, 175, 55, 0.35) transparent;
+}
+
+.dialog-pane > .header-panel .label {
+    -fx-text-fill: -ink;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane > .content.label,
+.dialog-pane .label {
+    -fx-text-fill: #dfe3f2;
+}
+
+.dialog-pane > .content {
+    -fx-padding: 18;
+}
+
+.dialog-pane > .button-bar > .container {
+    -fx-padding: 4 14 12 14;
+}
+
+/* ----- Receipt (paper look; also used when printing) ----- */
+
+.receipt {
+    -fx-background-color: #fffdf6;
+    -fx-background-radius: 6;
+    -fx-padding: 28 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 18, 0.15, 0, 6);
+}
+
+.receipt .label {
+    -fx-text-fill: #2a2a2a;
+    -fx-font-size: 13px;
+}
+
+.receipt .receipt-title {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #8a6d12;
+}
+
+.receipt .receipt-muted {
+    -fx-text-fill: #777777;
+    -fx-font-size: 12px;
+}
+
+.receipt .receipt-strong {
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-text-fill: #111111;
+}
+
+.receipt .receipt-owing {
+    -fx-font-weight: bold;
+    -fx-text-fill: #c0392b;
+}
+
+.receipt .receipt-settled {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e8f6a;
+}
+
+.receipt .receipt-thanks {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-style: italic;
+    -fx-text-fill: #8a6d12;
+}
+
+.receipt-separator {
+    -fx-border-color: #cfc6a8 transparent transparent transparent;
+    -fx-border-style: segments(4, 4);
+    -fx-border-width: 1 0 0 0;
+    -fx-pref-height: 1;
+}
+
+/* ----- Login ----- */
+
+.login-card {
+    -fx-padding: 34 38 30 38;
+    -fx-background-color: linear-gradient(to bottom, rgba(40, 46, 82, 0.82), rgba(12, 16, 34, 0.90));
+    -fx-border-color: rgba(212, 175, 55, 0.45);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 40, 0.15, 0, 12);
+}
+
+.login-crest {
+    -fx-text-fill: -gold;
+    -fx-font-size: 30px;
+}
+
+.login-title {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #fbe9b0 0%, #d4af37 50%, #fbe9b0 100%);
+}
+
+.login-heading {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ink;
+    -fx-padding: 6 0 0 0;
+}
+
+.login-button {
+    -fx-font-size: 14px;
+    -fx-padding: 10 18;
+}
+
+.caps-warning {
+    -fx-text-fill: #ffcf6b;
+    -fx-font-size: 12px;
+}
+
+.check-box {
+    -fx-text-fill: #aab3cc;
+}
+
+.check-box > .box {
+    -fx-background-color: -glass-edge, -field;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 5, 4;
+}
+
+.check-box:selected > .box > .mark {
+    -fx-background-color: -gold;
+}
+
+.strength-bar {
+    -fx-pref-height: 6;
+}
+
+.strength-bar > .track {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 4;
+}
+
+.strength-bar > .bar {
+    -fx-background-insets: 0;
+    -fx-background-radius: 4;
+    -fx-padding: 3;
+}
+
+.strength-bar.strength-1 > .bar { -fx-background-color: #ff6b81; }
+.strength-bar.strength-2 > .bar { -fx-background-color: #d4af37; }
+.strength-bar.strength-3 > .bar { -fx-background-color: #2ecc9a; }
+
+/* ----- Signed-in user chip ----- */
+
+.user-chip {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(212, 175, 55, 0.35);
+    -fx-border-radius: 24;
+    -fx-padding: 5 6 5 16;
+}
+
+.user-name {
+    -fx-text-fill: -ink;
+    -fx-font-weight: bold;
+}
+
+.role-badge {
+    -fx-font-size: 9.5px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 1 7;
+}
+
+.role-manager {
+    -fx-text-fill: #1a1405;
+    -fx-background-color: -gold;
+}
+
+.role-receptionist {
+    -fx-text-fill: #062419;
+    -fx-background-color: -emerald;
+}
+
+.button.sign-out {
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-padding: 6 14;
+}
+
+/* ----- Recovery ----- */
+
+.recovery-key {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -gold-light;
+    -fx-background-color: rgba(212, 175, 55, 0.10);
+    -fx-background-radius: 12;
+    -fx-border-color: -gold;
+    -fx-border-style: segments(6, 4);
+    -fx-border-radius: 12;
+    -fx-padding: 14 18;
+}
+
+.recovery-input {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 15px;
+}
+
+.username-reminder {
+    -fx-text-fill: -ink;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.hyperlink {
+    -fx-text-fill: -gold-light;
+    -fx-border-color: transparent;
+    -fx-padding: 2 4;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: white;
+    -fx-underline: true;
+}
+
+.hyperlink:visited {
+    -fx-text-fill: -gold-light;
+}
